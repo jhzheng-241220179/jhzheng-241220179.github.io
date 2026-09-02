@@ -3,93 +3,547 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jhzheng's Homepage</title>
+
+    <title>郑镜汗 | Personal Homepage</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
-            line-height: 1.7;
-            color: #222;
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                "PingFang SC",
+                "Hiragino Sans GB",
+                "Microsoft YaHei",
+                Arial,
+                sans-serif;
+
+            color: #2c2c2c;
+            background: #f7f8fa;
+            line-height: 1.8;
         }
 
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
+        /* 顶部导航栏 */
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #e8e8e8;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            backdrop-filter: blur(10px);
         }
 
-        h2 {
-            margin-top: 40px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 8px;
+        .nav-container {
+            max-width: 1050px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 15px 25px;
         }
 
-        .subtitle {
-            color: #666;
-            font-size: 18px;
+        .nav-name {
+            font-size: 20px;
+            font-weight: 600;
         }
 
-        a {
-            color: #0366d6;
+        .nav-links a {
+            margin-left: 25px;
+
+            color: #555;
             text-decoration: none;
+
+            font-size: 15px;
         }
 
-        a:hover {
+        .nav-links a:hover {
+            color: #1f5f99;
+        }
+
+        /* 页面主体 */
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+
+            padding: 70px 30px;
+        }
+
+        /* 个人介绍部分 */
+
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 65px;
+
+            padding: 25px 0 55px;
+        }
+
+        .profile-photo {
+            width: 240px;
+            height: 300px;
+
+            object-fit: cover;
+            object-position: center;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.10);
+        }
+
+        .hero-info {
+            flex: 1;
+        }
+
+        .hero-info h1 {
+            margin: 0 0 8px;
+
+            font-size: 44px;
+            font-weight: 650;
+
+            letter-spacing: 1px;
+        }
+
+        .english-name {
+            font-size: 20px;
+            color: #777;
+
+            margin-bottom: 22px;
+        }
+
+        .brief {
+            font-size: 17px;
+            color: #444;
+
+            max-width: 620px;
+        }
+
+        .contact-links {
+            margin-top: 25px;
+        }
+
+        .contact-links a {
+            display: inline-block;
+
+            margin-right: 20px;
+            margin-bottom: 10px;
+
+            color: #1f5f99;
+            text-decoration: none;
+
+            font-size: 15px;
+        }
+
+        .contact-links a:hover {
             text-decoration: underline;
+        }
+
+        /* 每个内容模块 */
+
+        section {
+            padding: 25px 0;
+        }
+
+        section h2 {
+            font-size: 27px;
+
+            margin-bottom: 20px;
+
+            padding-bottom: 8px;
+
+            border-bottom: 1px solid #dddddd;
+        }
+
+        section p {
+            color: #444;
+        }
+
+        /* 经历项目 */
+
+        .item {
+            margin-bottom: 25px;
+        }
+
+        .item-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .item-subtitle {
+            color: #777;
+            font-size: 15px;
+
+            margin-top: 3px;
+        }
+
+        .item-description {
+            margin-top: 8px;
+
+            color: #555;
+        }
+
+        /* 页脚 */
+
+        footer {
+            margin-top: 50px;
+
+            border-top: 1px solid #ddd;
+
+            text-align: center;
+
+            padding: 30px;
+
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* 手机适配 */
+
+        @media (max-width: 750px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+
+                gap: 35px;
+            }
+
+            .profile-photo {
+                width: 210px;
+                height: 260px;
+            }
+
+            .hero-info h1 {
+                font-size: 36px;
+            }
+
+            .container {
+                padding: 45px 25px;
+            }
         }
     </style>
 </head>
 
+
 <body>
 
-    <h1>Hi, I'm jhzheng</h1>
 
-    <p class="subtitle">
-        Undergraduate Student in Computer Science
-    </p>
+<!-- 顶部导航 -->
 
-    <h2>About Me</h2>
+<nav>
 
-    <p>
-        Hello! Welcome to my personal homepage.
-        I am an undergraduate student interested in computer science,
-        machine learning, algorithms and computer networks.
-    </p>
+    <div class="nav-container">
 
-    <h2>Education</h2>
+        <div class="nav-name">
+            郑镜汗
+        </div>
 
-    <p>
-        <strong>Nanjing University</strong><br>
-        Undergraduate Student
-    </p>
+        <div class="nav-links">
 
-    <h2>Research Interests</h2>
+            <a href="#about">About</a>
 
-    <ul>
-        <li>Machine Learning</li>
-        <li>Artificial Intelligence</li>
-        <li>Computer Networks</li>
-        <li>Algorithms</li>
-    </ul>
+            <a href="#education">Education</a>
 
-    <h2>Projects</h2>
+            <a href="#experience">Experience</a>
 
-    <ul>
-        <li>Course Projects</li>
-        <li>Personal Projects</li>
-        <li>Research Projects</li>
-    </ul>
+            <a href="#projects">Projects</a>
 
-    <h2>Contact</h2>
+            <a href="#honors">Honors</a>
 
-    <p>
-        Email:
-        <a href="mailto:241220179@smail.nju.edu.cn">
-            241220179@smail.nju.edu.cn
-        </a>
-    </p>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- 主页面 -->
+
+<div class="container">
+
+
+    <!-- 个人信息 -->
+
+    <div class="hero">
+
+        <img
+            src="profile.png"
+            alt="郑镜汗"
+            class="profile-photo"
+        >
+
+        <div class="hero-info">
+
+            <h1>郑镜汗</h1>
+
+            <div class="english-name">
+                Jinghan Zheng
+            </div>
+
+            <p class="brief">
+
+                南京大学本科生。
+
+                <br><br>
+
+                这里之后可以填写一段简短的个人介绍，例如专业方向、
+                兴趣领域、学习经历以及目前关注的研究方向。
+
+            </p>
+
+
+            <div class="contact-links">
+
+                <a href="#">
+                    Email
+                </a>
+
+                <a href="#">
+                    GitHub
+                </a>
+
+                <a href="#">
+                    CV
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- About -->
+
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+
+            这里填写个人简介。
+
+            可以简单介绍自己的专业背景、兴趣方向、
+            当前学习或研究内容，以及个人发展方向。
+
+        </p>
+
+    </section>
+
+
+
+    <!-- Education -->
+
+    <section id="education">
+
+        <h2>Education</h2>
+
+
+        <div class="item">
+
+            <div class="item-title">
+                南京大学
+            </div>
+
+            <div class="item-subtitle">
+
+                本科 · XXXX - XXXX
+
+            </div>
+
+            <div class="item-description">
+
+                专业、院系等信息将在这里补充。
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- Experience -->
+
+    <section id="experience">
+
+        <h2>Experience</h2>
+
+
+        <div class="item">
+
+            <div class="item-title">
+
+                经历名称
+
+            </div>
+
+            <div class="item-subtitle">
+
+                时间 · 单位 / 组织
+
+            </div>
+
+            <div class="item-description">
+
+                这里填写相关经历介绍。
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+
+        <div class="item">
+
+            <div class="item-title">
+
+                Project Name
+
+            </div>
+
+            <div class="item-subtitle">
+
+                项目时间 / 项目类型
+
+            </div>
+
+            <div class="item-description">
+
+                这里填写项目简介、承担工作以及相关成果。
+
+            </div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="item-title">
+
+                Project Name
+
+            </div>
+
+            <div class="item-subtitle">
+
+                项目时间 / 项目类型
+
+            </div>
+
+            <div class="item-description">
+
+                这里填写项目简介。
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- Honors -->
+
+    <section id="honors">
+
+        <h2>Honors & Awards</h2>
+
+
+        <div class="item">
+
+            <div class="item-title">
+
+                奖项 / 荣誉名称
+
+            </div>
+
+            <div class="item-subtitle">
+
+                XXXX
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <h2>Contact</h2>
+
+        <p>
+
+            Email：待补充
+
+        </p>
+
+        <p>
+
+            GitHub：
+            <a href="https://github.com/jhzheng-241220179">
+
+                github.com/jhzheng-241220179
+
+            </a>
+
+        </p>
+
+    </section>
+
+
+
+</div>
+
+
+
+<footer>
+
+    © 2026 Jinghan Zheng
+
+</footer>
+
 
 </body>
+
 </html>
